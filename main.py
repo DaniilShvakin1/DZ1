@@ -1,5 +1,18 @@
-for number in range(501, 10000):
-    octal_number = oct(number)[2:]
-    if octal_number[-3:] == '123':
-        print("Ответ:", number)
-        break
+import sys
+
+from PyQt6.QtWidgets import QApplicftion, QApplication
+
+import login_window
+
+if __name__ == "__main__":
+    app = QApplication(sys.argv)
+    #init login window
+login_window_ = login_window.login_window
+
+login_window_.show()
+
+sys.exit(app.exec())
+
+
+
+
