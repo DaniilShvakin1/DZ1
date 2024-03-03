@@ -11,9 +11,12 @@ if __name__ == '__main__':
     # init window
     login_window_ = QMainWindow()
     loader.login_window_ui.setupUi(login_window_)
-    login_window_.show()
-
     # load login window logic
-    login_window.logic(loader.login_window_ui)
+    if not login_window.logic(loader.login_window_ui):
+        login_window_.show()
+        print('not authed')
+
+    else:
+        print('authed')
 
     sys.exit(app.exec())
