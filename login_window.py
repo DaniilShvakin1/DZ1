@@ -31,9 +31,14 @@ def login_btn_clicked():
     remember_me = get_checkboxes(loader.login_window_ui)[0]
 
     if login.text() == 'Daniil' and password.text() == '12345':
-        pass
+        if remember_me.isChecked():
+            set_config('config.txt', 'login', login.text())
+            set_config('config.txt', 'password', password.text())
+            print('authed with save')
+        else:
+            print('authed without save')
     else:
-        pass
+        print('not ok')
 
 
 def logic(ui: Ui_MainWindow):
